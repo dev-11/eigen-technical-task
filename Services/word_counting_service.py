@@ -23,13 +23,12 @@ class WordCountingService:
                     else:
                         word_in_list[document_name] = [sentence]
                 else:
-                    new_word = {
+                    self._word_count.append({
                         "word": word.lower(),
                         "interesting_rating": interesting_rating,
                         "count": 1,
                         document_name: [sentence]
-                    }
-                    self._word_count.append(new_word)
+                    })
 
     def get_word_count(self):
         return self._word_count
