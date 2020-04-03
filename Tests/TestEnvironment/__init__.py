@@ -1,1 +1,2 @@
-from .mocks import get_test_single_sentence, get_test_three_sentences
+from .mocks import get_test_single_sentence, get_test_three_sentences, mocked_document_service,\
+    mocked_interesting_service, mocked_interesting_service_with_low_interesting_rate, get_test_duplicated_sentence

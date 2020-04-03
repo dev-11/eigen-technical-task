@@ -9,7 +9,7 @@ def main():
     interesting_service = Services.InterestingService(config.DEFAULT_INTERESTING_WEIGHT)
     document_parser = Services.DocumentParser()
     repo = Repositories.TxtRepository()
-    counting_service = Services.WordCountingService(document_parser, interesting_service)
+    counting_service = Services.WordCountingService(document_parser, interesting_service, config)
 
     for file in scanner.scan_files():
         text = repo.read_file(file)

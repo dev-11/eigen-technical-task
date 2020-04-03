@@ -1,18 +1,16 @@
-import config
-
-
 class WordCountingService:
-    def __init__(self, parser_service, interesting_service):
+    def __init__(self, parser_service, interesting_service, config):
         self._word_count = []
         self._parser_service = parser_service
         self._interesting_service = interesting_service
+        self._config = config
 
     def populate(self, sentence, document_name):
         words = self._parser_service.split_to_words(sentence)
         for word in words:
             interesting_rating = self._interesting_service.get_interesting_rating(word.lower())
 
-            if interesting_rating >= config.INTERESTING_RATING_THRESHOLD:
+            if interesting_rating >= self._config.INTERESTING_RATING_THRESHOLD:
 
                 word_in_list = next((x for x in self._word_count if x["word"] == word.lower()), None)
 
