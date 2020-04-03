@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/dev-11/eigen-technical-task.svg?branch=master)](https://travis-ci.org/dev-11/eigen-technical-task)
 [![codecov](https://codecov.io/gh/dev-11/eigen-technical-task/branch/master/graph/badge.svg)](https://codecov.io/gh/dev-11/eigen-technical-task)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0c5c148925e04728a06df0a44d2ab43f)](https://www.codacy.com/manual/dev-11/valsys-backend-tech-test?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dev-11/valsys-backend-tech-test&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cfd5da40bc744beb49b5f1121bd8822)](https://www.codacy.com/manual/dev-11/eigen-technical-task?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dev-11/eigen-technical-task&amp;utm_campaign=Badge_Grade)
 
 # Eigen Coding Task
 Here at Eigen, we spend a lot of time getting useful stuff out of documents. Usually a word or two, perhaps a sentence or paragraph. For this task, we’d like you to show us how you would do something similar!
