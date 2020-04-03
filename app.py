@@ -18,7 +18,7 @@ def main():
             for sentence in sentences:
                 counting_service.populate(sentence, file)
 
-    lst = counting_service.get_word_count() 
+    lst = counting_service.get_word_count()
     print(*lst, sep="\n\n")
 
 

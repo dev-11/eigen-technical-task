@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/dev-11/eigen-technical-task.svg?branch=master)](https://travis-ci.org/dev-11/eigen-technical-task)
+[![codecov](https://codecov.io/gh/dev-11/eigen-technical-task/branch/master/graph/badge.svg)](https://codecov.io/gh/dev-11/eigen-technical-task)
+
+
 # Eigen Coding Task
 Here at Eigen, we spend a lot of time getting useful stuff out of documents. Usually a word or two, perhaps a sentence or paragraph. For this task, we’d like you to show us how you would do something similar!
 
