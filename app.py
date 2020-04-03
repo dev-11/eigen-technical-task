@@ -18,10 +18,8 @@ class MainClass(Resource):
         counting_service = Services.WordCountingService(document_parser, interesting_service, threshold)
 
         for file in scanner.scan_files():
-            text = repo.read_file(file)
-            for line in text:
-                sentences = document_parser.split_to_sentences(line)
-                for sentence in sentences:
+            for line in repo.read_file(file):
+                for sentence in document_parser.split_to_sentences(line):
                     counting_service.populate(sentence, file)
 
         return counting_service.get_word_count()
