@@ -1,11 +1,11 @@
-from nltk import word_tokenize, sent_tokenize
+import re
 
 
 class DocumentParser:
     @staticmethod
     def split_to_sentences(text):
-        return [sentence for sentence in sent_tokenize(text)]
+        return re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<= \.| \?)\s', text)
 
     @staticmethod
     def split_to_words(text):
-        return word_tokenize(text)
+        return text.split()
