@@ -9,7 +9,8 @@ class WordCountingServiceTest(unittest.TestCase):
     def test_populate_populates_word_count_with_single_words(self):
         test_sentence = get_test_single_sentence()
         document_name = "document_name"
-        service = WordCountingService(mocked_document_service(), mocked_interesting_service(), config)
+        service = WordCountingService(mocked_document_service(), mocked_interesting_service(),
+                                      config.INTERESTING_RATING_THRESHOLD)
         service.populate(test_sentence, document_name)
         data = service.get_word_count()
         self.assertEqual(19, len(data))
@@ -18,7 +19,7 @@ class WordCountingServiceTest(unittest.TestCase):
         test_sentence = get_test_single_sentence()
         document_name = "document_name"
         service = WordCountingService(mocked_document_service(), mocked_interesting_service_with_low_interesting_rate(),
-                                      config)
+                                      config.INTERESTING_RATING_THRESHOLD)
         service.populate(test_sentence, document_name)
         data = service.get_word_count()
         self.assertEqual(0, len(data))
@@ -26,7 +27,8 @@ class WordCountingServiceTest(unittest.TestCase):
     def test_populate_populates_word_count_for_duplicated_sentence(self):
         test_sentence = get_test_duplicated_sentence()
         document_name = "document_name"
-        service = WordCountingService(mocked_document_service(), mocked_interesting_service(), config)
+        service = WordCountingService(mocked_document_service(), mocked_interesting_service(),
+                                      config.INTERESTING_RATING_THRESHOLD)
         service.populate(test_sentence, document_name)
         data = service.get_word_count()
         self.assertEqual(19, len(data))

@@ -1,27 +1,34 @@
-import sys
 import Services
 import Repositories
 import config
+from flask_restx import Resource, Api
+from flask import Flask
+
+app = Flask(__name__)
+api = Api(app)
 
 
-def main():
-    scanner = Services.DirectoryScanner(config.DIRECTORIES_TO_SCAN)
-    interesting_service = Services.InterestingService(config.DEFAULT_INTERESTING_WEIGHT)
-    document_parser = Services.DocumentParser()
-    repo = Repositories.TxtRepository()
-    counting_service = Services.WordCountingService(document_parser, interesting_service, config)
+@api.route('/get_word_count/<int:threshold>')
+class MainClass(Resource):
+    def get(self, threshold):
+        scanner = Services.DirectoryScanner(config.DIRECTORIES_TO_SCAN)
+        interesting_service = Services.InterestingService(config.DEFAULT_INTERESTING_WEIGHT)
+        document_parser = Services.DocumentParser()
+        repo = Repositories.TxtRepository()
+        counting_service = Services.WordCountingService(document_parser, interesting_service, threshold)
 
-    for file in scanner.scan_files():
-        text = repo.read_file(file)
-        for line in text:
-            sentences = document_parser.split_to_sentences(line)
-            for sentence in sentences:
-                counting_service.populate(sentence, file)
+        for file in scanner.scan_files():
+            text = repo.read_file(file)
+            for line in text:
+                sentences = document_parser.split_to_sentences(line)
+                for sentence in sentences:
+                    counting_service.populate(sentence, file)
 
-    lst = counting_service.get_word_count()
-    print(*lst, sep="\n\n")
+        return counting_service.get_word_count()
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    app.config.from_object('config')
+    app.run(port=config.PORT_NUMBER)
+
 
