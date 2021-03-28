@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dev-11/eigen-technical-task.svg?branch=master)](https://travis-ci.org/dev-11/eigen-technical-task)
+[![Build Status](https://travis-ci.com/dev-11/eigen-technical-task.svg?branch=master)](https://travis-ci.com/dev-11/eigen-technical-task)
 [![codecov](https://codecov.io/gh/dev-11/eigen-technical-task/branch/master/graph/badge.svg)](https://codecov.io/gh/dev-11/eigen-technical-task)
 <!--
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cfd5da40bc744beb49b5f1121bd8822)](https://www.codacy.com/manual/dev-11/eigen-technical-task?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dev-11/eigen-technical-task&amp;utm_campaign=Badge_Grade)
